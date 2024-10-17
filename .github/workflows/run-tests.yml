@@ -10,3 +10,19 @@ jobs:
     steps:
       - name: say hello
         run: echo 'hello from workflow'
+
+  test-utils:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone and checkout repo
+        uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm install
+      - name: run-tests
+        run: npm run test-utils
+      
+      ##1. setup node X
+      ##2. Clone and checkout repo X
+      ##3. install dependencies X
+      ##4. run tests
+  
