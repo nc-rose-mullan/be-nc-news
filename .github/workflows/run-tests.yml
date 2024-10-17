@@ -37,6 +37,7 @@ jobs:
       - name: run test-app
         run: PGDATABASE=my_db PGPASSWORD=password PGUSER=userface npm run test-app
   test-live: 
+    runs-on: ubuntu-latest
     steps:
       - name: checkout and clone repo
         uses: actions/checkout@v4
