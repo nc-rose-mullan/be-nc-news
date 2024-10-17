@@ -26,6 +26,6 @@ describe("GET: /api/topics", () => {
             });
     });
     test("hello new test", () => { 
-        expect(2+2).toBe(3)
+        expect(2+2).toBe(4)
     })
 })
