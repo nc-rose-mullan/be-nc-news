@@ -10,3 +10,13 @@ jobs:
     steps:
       - name: say hello
         run: echo 'hi from terminal'
+
+  test-utils:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone and checkout repo
+        uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm install
+      - name: run tests
+        run: npm run test-app
