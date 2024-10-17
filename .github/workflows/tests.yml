@@ -34,4 +34,4 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: run tests
-        run: PGPASSWORD=verysecurepassword PGDATABASE=my_database PGUSER=mrsTesterson npm run test
+        run: PGPASSWORD=verysecurepassword PGDATABASE=my_database PGUSER=mrsTesterson npm run test-app
