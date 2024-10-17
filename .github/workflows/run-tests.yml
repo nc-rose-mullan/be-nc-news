@@ -19,4 +19,4 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: run tests
-        run: npm run test-app
+        run: npm run test-utils
