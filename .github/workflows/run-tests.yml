@@ -1,0 +1,39 @@
+name: run tests
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        run: echo 'hi from terminal'
+
+  test-utils:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone and checkout repo
+        uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm install
+      - name: run tests
+        run: npm run test-utils
+
+  test-app:
+    needs: test-utils
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone and checkout repo
+        uses: actions/checkout@v4
+      - name: setup psql
+        uses: harmon758/postgresql-action@v1
+        with: 
+          postgresql db: my_db
+          postgresql password: my_password
+          postgresql user: rose_is_cool
+      - name: install dependencies
+        run: npm install
+      - name: run tests
+        run: PGDATABASE=my_db PGPASSWORD=my_password PGUSER=rose_is_cool npm run test-app
