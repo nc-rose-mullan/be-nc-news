@@ -10,7 +10,7 @@ jobs:
     steps:
      - name: say hello
        run: echo 'hello from pipeline'
-  utils-tests:
+  test-utils:
     runs-on: ubuntu-latest
     steps:
       - name: check out and clone repo
