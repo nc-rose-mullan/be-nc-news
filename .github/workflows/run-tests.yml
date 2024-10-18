@@ -10,3 +10,12 @@ jobs:
     steps:
       - name: say hello
         run: echo 'hello from pipeline'
+  test-utils:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone and checkout the repo
+        uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm install
+      - name: run utils tests
+        run: npm run test-utils
