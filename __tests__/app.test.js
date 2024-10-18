@@ -24,5 +24,8 @@ describe("GET: /api/topics", () => {
                     expect(typeof topic.description).toBe("string")
                 })
             })
+        test("another test", () => { 
+            expect(2 + 2).toBe(5)
+        })
     });
 })
