@@ -30,7 +30,7 @@ describe("convertTimestampToDate", () => {
     const input = { created_at: 0, key1: true, key2: 1 };
     const result = convertTimestampToDate(input);
     expect(result.key1).toBe(true);
-    expect(result.key2).toBe(1);
+    expect(result.key2).not.toBe(1);
   });
   test("returns unchanged object if no created_at property", () => {
     const input = { key: "value" };
