@@ -36,7 +36,3 @@ jobs:
       - name: run integration tests
         run: PGDATABASE=my_db PGPASSWORD=p4ssw0rd PGUSER=userface npm run test-app
       
-
-
-    ## install dependencies
-    ## run my tests
